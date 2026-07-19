@@ -1,0 +1,258 @@
+================================================================================
+COMPREHENSIVE CHURN ANALYSIS - STREAMING SERVICE
+================================================================================
+
+EXECUTIVE SUMMARY
+--------------------------------------------------------------------------------
+Overall Churn Rate: 38.6% (193 out of 500 customers)
+Analysis Date: 2024
+Model Accuracy: 60.67% (Random Forest Classifier)
+
+================================================================================
+MAJOR DRIVERS OF CHURN - RANKED BY IMPORTANCE
+================================================================================
+
+1. TOTAL VIEWING HOURS (Importance: 23.9%)
+   --------------------------------------------------------
+   • STRONGEST predictor of churn
+   • Churned customers: 66.6 hours/month (average)
+   • Retained customers: 83.2 hours/month (average)
+   • DIFFERENCE: -16.6 hours/month (-20% less viewing)
+   • Statistical Significance: p < 0.001 (HIGHLY significant)
+   
+   KEY INSIGHT: Low engagement is the #1 red flag. Customers who watch 
+   less than 50 hours/month have a 71% churn rate vs. 13% for high viewers.
+
+2. AVERAGE SESSION DURATION (Importance: 21.1%)
+   --------------------------------------------------------
+   • SECOND strongest predictor
+   • Churned customers: 49.4 minutes/session (average)
+   • Retained customers: 57.8 minutes/session (average)
+   • DIFFERENCE: -8.3 minutes (-14% shorter sessions)
+   • Statistical Significance: p < 0.001 (HIGHLY significant)
+   
+   KEY INSIGHT: Short sessions indicate lack of content engagement. Users
+   who don't complete episodes/movies are more likely to cancel.
+
+3. NUMBER OF UNIQUE TITLES WATCHED (Importance: 14.5%)
+   --------------------------------------------------------
+   • Indicates content variety and exploration
+   • Churned customers: 19.5 titles/month (average)
+   • Retained customers: 23.7 titles/month (average)
+   • DIFFERENCE: -4.3 titles (-18% less variety)
+   • Statistical Significance: p < 0.001 (HIGHLY significant)
+   
+   KEY INSIGHT: Customers who explore diverse content stay longer. Limited
+   content exploration suggests they're not finding what they want.
+
+4. CUSTOMER SERVICE INTERACTIONS (Importance: 12.5%)
+   --------------------------------------------------------
+   • CRITICAL negative indicator
+   • Churned customers: 3.18 interactions/year (average)
+   • Retained customers: 2.49 interactions/year (average)
+   • DIFFERENCE: +0.69 interactions (+28% more issues)
+   • Statistical Significance: p < 0.001 (HIGHLY significant)
+   
+   CHURN RATE BY CS INTERACTIONS:
+   • 1 interaction:  30% churn rate
+   • 2 interactions: 35% churn rate
+   • 3 interactions: 40% churn rate
+   • 4 interactions: 47% churn rate
+   • 5+ interactions: 58% churn rate
+   
+   KEY INSIGHT: Customer service interactions are a strong churn predictor.
+   Each additional contact increases churn likelihood. This suggests either
+   unresolved issues OR problems with the service itself.
+
+5. BINGE WATCHING SESSIONS (Importance: 10.5%)
+   --------------------------------------------------------
+   • Measures deep engagement
+   • Churned customers: 6.2 sessions/month (average)
+   • Retained customers: 7.7 sessions/month (average)
+   • DIFFERENCE: -1.5 sessions (-19% fewer binges)
+   • Statistical Significance: p < 0.001 (HIGHLY significant)
+   
+   KEY INSIGHT: Binge-watching is healthy! It indicates users are highly
+   engaged with content. Loss of binge behavior precedes churn.
+
+================================================================================
+DEMOGRAPHIC & CATEGORICAL FACTORS
+================================================================================
+
+SUBSCRIPTION TIER ANALYSIS
+--------------------------
+   Tier        | Total Users | Churned | Churn Rate
+   ------------|-------------|---------|------------
+   Basic       |     207     |    90   |   43.5%  ← HIGHEST RISK
+   Standard    |     210     |    83   |   39.5%
+   Premium     |      83     |    20   |   24.1%  ← LOWEST RISK
+   
+   KEY INSIGHTS:
+   • Basic tier has 80% HIGHER churn than Premium
+   • Suggests value proposition issues with Basic tier
+   • Premium users are more engaged and satisfied
+   • Monthly cost shows NEGATIVE correlation with churn (-0.126)
+     → Cheaper plans don't mean better retention
+
+CONTENT GENRE ANALYSIS
+----------------------
+   Genre        | Total Users | Churned | Churn Rate
+   -------------|-------------|---------|------------
+   Horror       |      44     |    23   |   52.3%  ← HIGHEST RISK
+   Thriller     |      29     |    14   |   48.3%
+   Action       |      74     |    33   |   44.6%
+   Romance      |      55     |    23   |   41.8%
+   SciFi        |      42     |    17   |   40.5%
+   Drama        |     102     |    36   |   35.3%
+   Comedy       |     100     |    33   |   33.0%
+   Documentary  |      54     |    14   |   25.9%  ← LOWEST RISK
+   
+   KEY INSIGHTS:
+   • Niche genres (Horror, Thriller) show 2X churn vs. Documentary
+   • Likely due to limited content depth in these categories
+   • Broader appeal genres (Comedy, Documentary) retain better
+   • May need more content investment in high-churn genres
+
+================================================================================
+ENGAGEMENT SCORE ANALYSIS
+================================================================================
+
+Created composite engagement metric from:
+- Viewing Hours (30% weight)
+- Binge Sessions (25% weight)
+- Unique Titles (25% weight)
+- Session Duration (20% weight)
+
+   Engagement Level | Churn Rate
+   -----------------|------------
+   Very Low         |   71.2%   ← CRITICAL
+   Low              |   54.8%
+   Medium           |   38.1%
+   High             |   22.6%
+   Very High        |   12.9%   ← TARGET
+
+KEY INSIGHT: Clear inverse relationship between engagement and churn.
+Moving customers from "Low" to "Medium" engagement could reduce churn by 30%.
+
+================================================================================
+COMBINED RISK FACTORS
+================================================================================
+
+Analyzing interaction between Engagement and Customer Service:
+
+   Engagement    | Low CS (<3)  | High CS (≥3)
+   --------------|--------------|-------------
+   Low           |    63.5%     |    79.1%    ← DANGER ZONE
+   Medium        |    31.2%     |    44.8%
+   High          |    18.3%     |    28.6%
+
+KEY INSIGHT: Combination of low engagement AND high customer service issues
+creates a "danger zone" with nearly 80% churn rate. Early intervention needed!
+
+================================================================================
+STATISTICAL CORRELATIONS WITH CHURN
+================================================================================
+
+   Feature                              | Correlation | Direction
+   -------------------------------------|-------------|----------
+   Customer Service Interactions        |   +0.279    | POSITIVE (bad)
+   Total Viewing Hours                  |   -0.246    | NEGATIVE (good)
+   Binge Watching Sessions              |   -0.237    | NEGATIVE (good)
+   Number of Unique Titles              |   -0.224    | NEGATIVE (good)
+   Average Session Duration             |   -0.218    | NEGATIVE (good)
+   Monthly Cost                         |   -0.126    | NEGATIVE (good)
+   Top Genre                            |   +0.054    | Weak
+   Subscription Tier                    |   -0.037    | Very Weak
+
+KEY INSIGHT: Customer service issues show POSITIVE correlation (more = worse),
+while all engagement metrics show NEGATIVE correlation (more = better).
+
+================================================================================
+ACTIONABLE RECOMMENDATIONS
+================================================================================
+
+IMMEDIATE ACTIONS (High Priority):
+-----------------------------------
+1. EARLY WARNING SYSTEM
+   • Monitor customers with <50 viewing hours/month
+   • Flag any customer with 3+ CS interactions in 6 months
+   • Create engagement alerts for declining trends
+
+2. CUSTOMER SERVICE INTERVENTION
+   • Proactively reach out after 2nd CS interaction
+   • Fast-track resolution for frequent contactors
+   • Analyze root causes: Why are people calling?
+   • Each CS interaction increases churn by ~7-8%
+
+3. BASIC TIER IMPROVEMENTS
+   • Review value proposition (43.5% churn is unsustainable)
+   • Consider adding features to encourage upgrades
+   • Or reduce price to better match perceived value
+   • Test promotional upgrades to Standard/Premium
+
+4. CONTENT STRATEGY
+   • Expand Horror/Thriller catalog (52% churn rate)
+   • Promote Documentary/Comedy content (lower churn)
+   • Personalized recommendations to increase title variety
+   • Target: Get users to watch 25+ unique titles/month
+
+MEDIUM-TERM INITIATIVES:
+------------------------
+5. ENGAGEMENT CAMPAIGNS
+   • Nudge users toward longer sessions (60+ minutes)
+   • Promote binge-worthy content (series, documentaries)
+   • Gamification: Badges for watching diverse genres
+   • Goal: Move "Low Engagement" users to "Medium"
+
+6. RETENTION OFFERS
+   • Target users with declining viewing hours
+   • Personalized content suggestions
+   • Limited-time Premium trials for Basic users
+   • Win-back campaigns for at-risk segments
+
+7. DATA MONITORING
+   • Weekly cohort analysis of engagement metrics
+   • A/B test different intervention strategies
+   • Track leading indicators (session duration, title variety)
+   • Predictive model deployment for churn probability
+
+================================================================================
+EXPECTED IMPACT
+================================================================================
+
+Conservative Estimates:
+• Improving CS resolution: -5% churn (193 → 168 churns)
+• Increasing engagement: -8% churn (193 → 153 churns)
+• Basic tier improvements: -4% churn (193 → 173 churns)
+• Combined effect: -15% total churn (38.6% → 23.6%)
+
+This would represent 75 SAVED CUSTOMERS from the current dataset.
+
+================================================================================
+CONCLUSION
+================================================================================
+
+The analysis reveals that CHURN IS PRIMARILY DRIVEN BY LOW ENGAGEMENT, not
+price sensitivity. The strongest predictors are:
+
+1. Low viewing hours
+2. Short session durations
+3. Limited content exploration
+4. Unresolved customer service issues
+
+The data strongly suggests that customers leave because they're not finding
+value in the content, not because it's too expensive. In fact, Premium users
+(highest price) have the LOWEST churn.
+
+Focus should be on:
+✓ Increasing user engagement through better content recommendations
+✓ Resolving customer issues quickly and effectively
+✓ Providing compelling content across all genres
+✓ Identifying and intervening with at-risk users early
+
+The good news: These are all addressable through product improvements and
+operational excellence, rather than requiring price cuts that would hurt revenue.
+
+================================================================================
+END OF REPORT
+================================================================================
