@@ -1,51 +1,50 @@
 [
   {
     "prompt_inputs": {
-      "height": "180",
-      "weight": "110",
-      "goal": "muscle recovery and strength maintenance post-injury",
-      "restrictions": "no nuts, no dairy"
+      "height": "178",
+      "weight": "70",
+      "goal": "marathon training with high-intensity endurance workouts",
+      "restrictions": "none"
     },
     "solution_criteria": [
-      "Meal plan spans a full 24-hour period with breakfast, lunch, dinner, and snacks",
-      "All meals and snacks are free from nuts and dairy allergens",
-      "Plan includes high protein content suitable for muscle recovery in a heavyweight athlete",
-      "Meals are realistic and practical for a single person to prepare"
+      "Meal plan covers all 3 meals plus snacks for a full day",
+      "Caloric intake appropriate for a 70kg endurance athlete in training (approximately 2800-3200 calories)",
+      "Macro distribution supports aerobic performance with adequate carbohydrates (55-60% of calories) for energy and recovery",
+      "All meals are realistic, specific food items with reasonable portion sizes"
     ],
     "task_description": "Write a 1 day meal plan for a single athlete",
-    "scenario": "Testing with a heavyweight athlete (weightlifter) recovering from injury with specific allergies (nuts and dairy) to ensure the meal plan accommodates muscle recovery while avoiding allergens"
+    "scenario": "Testing with a high-performance endurance athlete (marathon runner) with no dietary restrictions - verifies the prompt can calculate appropriate caloric intake and macro distribution for aerobic sports with standard nutritional needs"
   },
   {
     "prompt_inputs": {
       "height": "178",
-      "weight": "68",
-      "goal": "marathon training with high energy needs",
-      "restrictions": "vegan"
+      "weight": "82",
+      "goal": "muscle building through strength training",
+      "restrictions": "vegetarian, nut allergy"
     },
     "solution_criteria": [
-      "Meal plan covers all meals for one full day",
-      "Daily caloric intake supports endurance athlete needs (approximately 2800-3200 calories)",
-      "Protein sourced entirely from plant-based foods and meets minimum 1.2g per kg body weight",
-      "Includes carbohydrate-rich foods appropriate for marathon training fuel"
+      "Meal plan covers all meals for one full day (breakfast, lunch, dinner, snacks)",
+      "All foods are vegetarian and contain no nuts or tree nuts",
+      "Includes adequate protein sources suitable for muscle building (minimum 1.6g protein per kg body weight)",
+      "Meals are practical and realistic to prepare for a single person"
     ],
     "task_description": "Write a 1 day meal plan for a single athlete",
-    "scenario": "Testing with a lean endurance athlete (marathon runner) with high caloric needs, normal BMI, and vegan dietary restrictions to verify the plan meets protein requirements through plant-based sources"
+    "scenario": "Testing with a strength-training athlete who is vegetarian with a nut allergy - validates that the prompt can accommodate multiple dietary restrictions and preferences while maintaining adequate protein intake for muscle building goals"
   },
   {
     "prompt_inputs": {
-      "height": "175",
-      "weight": "68",
-      "goal": "performance and recovery for soccer training",
-      "restrictions": "none"
+      "height": "178",
+      "weight": "75",
+      "goal": "weight loss while maintaining boxing performance",
+      "restrictions": "lactose intolerance"
     },
     "solution_criteria": [
-      "Meal plan includes 4-5 meals/snacks with appropriate timing around training sessions",
-      "Macronutrient distribution supports youth athlete needs (adequate carbohydrates for energy, protein for recovery, healthy fats)",
-      "Portion sizes are age-appropriate for a 16-year-old soccer player with moderate activity level",
-      "All meals are practical and realistic for a typical day"
+      "Meal plan creates a calorie deficit appropriate for gradual weight loss without compromising athletic performance",
+      "All meals and snacks are lactose-free or use lactose-free alternatives",
+      "Includes adequate protein intake to support muscle retention and recovery during weight loss"
     ],
     "task_description": "Write a 1 day meal plan for a single athlete",
-    "scenario": "Testing with a youth athlete (soccer player) with average metrics and no restrictions to validate age-appropriate portions, balanced macronutrients, and practical meal timing around training schedules"
+    "scenario": "Testing with a lightweight combat sports athlete (boxer) with a weight-loss goal and lactose intolerance - assesses whether the prompt can create a calorie-deficit meal plan while respecting medical dietary constraints and ensuring performance isn't compromised"
   },
   {
     "prompt_inputs": {
