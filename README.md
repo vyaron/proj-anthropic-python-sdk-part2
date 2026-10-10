@@ -4,6 +4,21 @@ Jupyter notebooks working through the Anthropic Python SDK: prompt evaluation an
 
 Notebooks are numbered in teaching order and are mostly self-contained — each one re-declares its own client and helper functions, so you can open any single notebook and run it top to bottom.
 
+## Why this session (read this first)
+
+The fair objection: *"we came for AI-powered SDLC, we're not building AI apps."* Correct — and that is what this session is about. Your AI coding tool **is** a prompt, a tool loop, and a context window. Every lever you have over it is one of four things, and each notebook here is one lever with the covers off:
+
+| What you do in the IDE | What it actually is | Notebook |
+| --- | --- | --- |
+| Write `CLAUDE.md`, slash commands, specs for an agent | Prompt engineering, measured | `11` |
+| Judge whether that change actually helped | Evals — a test suite for a non-deterministic component | `10` |
+| Install an MCP server, write a hook | A tool schema plus a `tool_result` round-trip | `20` |
+| Debug "why did it loop / pick the wrong tool / stop halfway?" | The agent loop and its failure modes | `21`, `22` |
+
+You will not write a tool loop by hand at work. You will debug one, or be asked to add a "summarize this" feature, and this is the session that makes that an afternoon instead of a fortnight. The cheapest route to a working mental model of the tool you already use all day is to build a small one by hand, once.
+
+Each notebook opens with a **"Why this is in an AI-powered SDLC class"** cell tying it back to this table.
+
 ## Setup
 
 1. Install dependencies:
